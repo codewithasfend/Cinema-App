@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renderers="clr-namespace:RealWorldApp.Renderers"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.LoginPage"
+             BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout Margin="20"
+                     Spacing="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="backicon.png"
+                       HorizontalOptions="Start"
+                       Grid.Column="0"
+                       Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="ImgBack" Tapped="ImgBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="SIGN IN"
+                       TextColor="White"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       FontSize="Title"
+                       Grid.Column="1" />
+            </Grid>
+            <Image Source="loginuser.png"
+                   Margin="0,40,0,0"
+                   HorizontalOptions="Center"
+                   HeightRequest="80"
+                   WidthRequest="80" />
+            <Label Text="Log in with your Email"
+                   Margin="0,40,0,0"
+                   TextColor="#F38914"
+                   VerticalOptions="Start"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand" />
+            <renderers:BorderlessEntry Placeholder="Email"
+                                       x:Name="EntEmail"
+                                       TextColor="White"
+                                       PlaceholderColor="White"
+                                       BackgroundColor="#263A4F" />
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+            <renderers:BorderlessEntry Placeholder="Password"
+                                       x:Name="EntPassword"
+                                       IsPassword="True"
+                                       TextColor="White"
+                                       PlaceholderColor="White"
+                                       BackgroundColor="#263A4F" />
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+            <Image Source="login.png"
+                   Margin="0,30,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="ImgLogin" Tapped="ImgLogin_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

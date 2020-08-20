@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renderers="clr-namespace:RealWorldApp.Renderers"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.SearchMoviesPage"
+             BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Frame Padding="5"
+                       HasShadow="False"
+                       HorizontalOptions="FillAndExpand"
+                       BackgroundColor="#263A4F"
+                       BorderColor="Transparent">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="backarrowicon.png"
+                               Margin="10,0,10,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="ImgBack" Tapped="ImgBack_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Frame Margin="0,0,15,0"
+                               Padding="0"
+                               HasShadow="False"
+                               HorizontalOptions="FillAndExpand">
+                            <renderers:BorderlessEntry Placeholder="Search Movie"
+                                                       x:Name="EntSearchMovie" 
+                                                       TextChanged="EntSearchMovie_TextChanged"/>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <CollectionView x:Name="CvMovies"
+                            SelectionMode="Single"
+                            SelectionChanged="CvMovies_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="1"
+                                     Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="15,10,15,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="8*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Aspect="Fill"
+                                   HeightRequest="100"
+                                   VerticalOptions="Start"
+                                   Grid.Column="0"
+                                   Source="{Binding FullImageUrl}"/>
+                            <Label FontSize="Medium"
+                                   Grid.Column="1"
+                                   TextColor="White"
+                                   VerticalOptions="Center"
+                                   Text="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.ReservationDetailPage"
+             BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="backicon.png"
+                       HorizontalOptions="Start"
+                       Grid.Column="0"
+                       Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="ImgBack" Tapped="ImgBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Reservation Detail"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="Title"
+                       Grid.Column="1" />
+            </Grid>
+            <Frame BackgroundColor="#131C25"
+                   Margin="0,20,0,0"
+                   HasShadow="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Reservation Id#"
+                           TextColor="#F38914"
+                           Grid.Row="0"
+                           Grid.Column="0" />
+                    <Label x:Name="LblReservationId"
+                           TextColor="White"
+                           Grid.Row="0"
+                           Grid.Column="1" />
+                    <Label Text="Reservation Time"
+                           TextColor="#F38914"
+                           Grid.Row="1"
+                           Grid.Column="0" />
+                    <Label x:Name="LblReservationTime"
+                           TextColor="White"
+                           Grid.Row="1"
+                           Grid.Column="1" />
+                    <Label Text="Customer Name"
+                           TextColor="#F38914"
+                           Grid.Row="2"
+                           Grid.Column="0" />
+                    <Label x:Name="LblCustomerName"
+                           TextColor="White"
+                           Grid.Row="2"
+                           Grid.Column="1" />
+                    <Label Text="Movie Name"
+                           TextColor="#F38914"
+                           Grid.Row="3"
+                           Grid.Column="0" />
+                    <Label x:Name="LblMovieName"
+                           TextColor="White"
+                           Grid.Row="3"
+                           Grid.Column="1" />
+                    <Label Text="Email"
+                           TextColor="#F38914"
+                           Grid.Row="4"
+                           Grid.Column="0" />
+                    <Label x:Name="LblEmail"
+                           TextColor="White"
+                           Grid.Row="4"
+                           Grid.Column="1" />
+                    <Label Text="Qty"
+                           TextColor="#F38914"
+                           Grid.Row="5"
+                           Grid.Column="0" />
+                    <Label x:Name="LblQty"
+                           TextColor="White"
+                           Grid.Row="5"
+                           Grid.Column="1" />
+                    <Label Text="Price"
+                           TextColor="#F38914"
+                           Grid.Row="6"
+                           Grid.Column="0" />
+                    <Label x:Name="LblPrice"
+                           TextColor="White"
+                           Grid.Row="6"
+                           Grid.Column="1" />
+                    <Label Text="Phone"
+                           TextColor="#F38914"
+                           Grid.Row="7"
+                           Grid.Column="0" />
+                    <Label x:Name="LblPhone"
+                           TextColor="White"
+                           Grid.Row="7"
+                           Grid.Column="1" />
+                    <Label Text="Playing Date"
+                           TextColor="#F38914"
+                           Grid.Row="8"
+                           Grid.Column="0" />
+                    <Label x:Name="LblPlayingDate"
+                           TextColor="White"
+                           Grid.Row="8"
+                           Grid.Column="1" />
+                    <Label Text="Playing Time"
+                           TextColor="#F38914"
+                           Grid.Row="9"
+                           Grid.Column="0" />
+                    <Label x:Name="LblPlayingTime"
+                           TextColor="White"
+                           Grid.Row="9"
+                           Grid.Column="1" />
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

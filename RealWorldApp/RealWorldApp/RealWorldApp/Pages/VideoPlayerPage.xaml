@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.VideoPlayerPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Image Margin="15,20,15,0"
+                       Source="backicon.png"
+                       HorizontalOptions="Start"
+                       Grid.Column="0"
+                       Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="ImgBack" Tapped="ImgBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <MediaElement x:Name="MediaElementVideo"
+                              ShowsPlaybackControls="True"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand" />
+            </StackLayout>
+            <ActivityIndicator x:Name="AILoader"
+                               HorizontalOptions="Center"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                               IsRunning="True"
+                               IsVisible="True"
+                               Color="White" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

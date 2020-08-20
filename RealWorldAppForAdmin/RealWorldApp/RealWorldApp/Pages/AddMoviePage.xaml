@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renderers="clr-namespace:RealWorldApp.Renderers"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.AddMoviePage"
+             BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15,20,15,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*" />
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="1.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="backicon.png"
+                           HorizontalOptions="Start"
+                           Grid.Column="0"
+                           Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ImgBack" Tapped="ImgBack_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Add Movie"
+                           TextColor="White"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           FontSize="Title"
+                           Grid.Column="1" />
+                </Grid>
+                <StackLayout Margin="0,10,0,0"
+                             Spacing="4">
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntMovieName"
+                                                   Placeholder="Movie Name"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntLanguage"
+                                                   Placeholder="Language"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntDuration"
+                                                   Placeholder="Duration"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntPlayingDate"
+                                                   Placeholder="Playing Date"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntPlayingTime"
+                                                   Placeholder="Playing Time"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntTicketPrice"
+                                                   Placeholder="Ticket Price"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntRating"
+                                                   Placeholder="Rating"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntGenre"
+                                                   Placeholder="Genre"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <renderers:BorderlessEntry x:Name="EntTrailorUrl"
+                                                   Placeholder="Trailer Url"
+                                                   TextColor="Black"
+                                                   PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Frame Padding="2"
+                           HasShadow="False">
+                        <Editor x:Name="EdtDescription"
+                                Placeholder="Description"
+                                HeightRequest="100"
+                                TextColor="Black"
+                                PlaceholderColor="#131C25" />
+                    </Frame>
+                    <Image HorizontalOptions="End"
+                           Aspect="Fill"
+                           Margin="0,10,0,0"
+                           HeightRequest="80"
+                           WidthRequest="100"
+                           x:Name="ImgMovie"
+                           Source="uploadImage.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapPickImage" Tapped="TapPickImage_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="save.png"
+                           Margin="0,10,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ImgSave" Tapped="ImgSave_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

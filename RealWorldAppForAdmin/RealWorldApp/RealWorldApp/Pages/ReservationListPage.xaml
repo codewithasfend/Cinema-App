@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.ReservationListPage"
+             BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout Spacing="20"
+                     Margin="20">
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="backicon.png"
+                       HorizontalOptions="Start"
+                       Grid.Column="0"
+                       Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="ImgBack" Tapped="ImgBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Reservations"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="Title"
+                       Grid.Column="1" />
+            </Grid>
+            <CollectionView x:Name="CvReservations"
+                            SelectionMode="Single"
+                            SelectionChanged="CvReservations_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#131C25"
+                               Margin="0,20,0,0"
+                               HasShadow="False">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Reservation Id#"
+                                       TextColor="#F38914"
+                                       Grid.Row="0"
+                                       Grid.Column="0" />
+                                <Label TextColor="White"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       Text="{Binding Id}"/>
+                                <Label Text="Reservation Time"
+                                       TextColor="#F38914"
+                                       Grid.Row="1"
+                                       Grid.Column="0" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       TextColor="White">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding ReservationTime, StringFormat='{0:MMMM dd, yyyy}'}" />
+                                            <Span Text=" " />
+                                            <Span Text="{Binding ReservationTime, StringFormat='{0:h:mm tt}'}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="Customer Name"
+                                       TextColor="#F38914"
+                                       Grid.Row="2"
+                                       Grid.Column="0" />
+                                <Label TextColor="White"
+                                       Grid.Row="2"
+                                       Grid.Column="1"
+                                       Text="{Binding CustomerName}"/>
+                                <Label Text="Movie Name"
+                                       TextColor="#F38914"
+                                       Grid.Row="3"
+                                       Grid.Column="0" />
+                                <Label TextColor="White"
+                                       Grid.Row="3"
+                                       Grid.Column="1"
+                                       Text="{Binding MovieName}"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

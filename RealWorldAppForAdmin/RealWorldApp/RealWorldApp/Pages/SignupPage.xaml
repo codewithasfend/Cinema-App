@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renderers="clr-namespace:RealWorldApp.Renderers"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.SignupPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout Margin="20"
+                     Spacing="15">
+            <Label Text="SIGN UP"
+                   TextColor="White"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Title" />
+            <Image Source="adduser.png"
+                   Margin="0,40,0,0"
+                   HorizontalOptions="Center"
+                   HeightRequest="80"
+                   WidthRequest="80" />
+            <Label Text="Let's get started"
+                   Margin="0,40,0,0"
+                   TextColor="#F38914"
+                   VerticalOptions="Start"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand" />
+            <renderers:BorderlessEntry Placeholder="Full Name"
+                                       x:Name="EntName"
+                                       TextColor="White"
+                                       PlaceholderColor="White"
+                                       BackgroundColor="#263A4F" />
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+            <renderers:BorderlessEntry Placeholder="Email"
+                                       x:Name="EntEmail"
+                                       TextColor="White"
+                                       PlaceholderColor="White"
+                                       BackgroundColor="#263A4F" />
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+            <renderers:BorderlessEntry Placeholder="Password"
+                                       x:Name="EntPassword"
+                                       IsPassword="True"
+                                       TextColor="White"
+                                       PlaceholderColor="White"
+                                       BackgroundColor="#263A4F" />
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Margin="0,40,0,0">
+                <Label Text="Already have an account?"
+                       TextColor="White" />
+                <Label Text="Click Here"
+                       TextDecorations="Underline"
+                       TextColor="#F38914">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="LblLogin" Tapped="LblLogin_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Image Source="signup.png"
+                   Margin="0,40,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="ImgSignup" Tapped="ImgSignup_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
